@@ -1,0 +1,17 @@
+version: '2'
+services:
+  zkdash:
+    build: .
+    image: zkdash:latest
+    container_name: zkdash 
+    network_mode: host
+    restart: always
+    environment:
+      DB_NAME: zkdash
+      DB_HOST: 127.0.0.1 
+      DB_PORT: 3306 
+      DB_USER: zkdash 
+      DB_PWD: xxxx
+      RUN_PORT: 8765 
+    volumes:
+        - /data/zkdash:/data
